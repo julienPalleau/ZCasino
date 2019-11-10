@@ -3,6 +3,13 @@ credit = 100
 reponse = 'O'
 
 
+def debug(*param):
+    result = ""
+    for i in param:
+        result += " " + str(i)
+    return print(result)
+
+
 def tirageRoulette():
     return randrange(50)
 
@@ -53,12 +60,13 @@ while (reponse.upper() != "N" and reponse.upper() == "O" and miseJoueur < credit
                   int(0.5 * miseJoueur), "dollars")
             credit += int(0.5 * miseJoueur)
             print("Vous possedez maintenant", credit, "dollars")
-
         else:
+            debug(miseJoueur, credit)
             print("vous avez perdu votre mise!", miseJoueur, "dollars")
             credit -= int(miseJoueur)
             print("Vous possedez maintenant", credit, "dollars")
-            if miseJoueur <= credit:
+
+            if miseJoueur >= credit:
                 print(
                     "Vous ne possedez plus assez d'argent pour faire un nouveau pari !")
                 break
