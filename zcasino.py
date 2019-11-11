@@ -45,27 +45,27 @@ while (reponse.upper() != "N" and reponse.upper() == "O" and miseJoueur < credit
         else:
             pariCouleur = "noir"
 
-        print("vous avez parie sur le: ", pari, pariCouleur)
+        print("vous avez parie sur le: {0} {1}".format(pari, pariCouleur))
         print("Attention rien ne va plus\n")
 
-        print("Le numero sortant est le: ", roulette,
-              rouletteCouleur, "Vous aviez joue le: ", pari, pariCouleur)
+        print("Le numero sortant est le: {0} {1} Vous aviez joue le: {2} {3}".format(
+            roulette, rouletteCouleur, pari, pariCouleur))
 
         if (roulette == pari):
             print("Bravo, vous avez gagne 3 fois votre mise !")
             credit += int(3 * miseJoueur)
-            print("Vous possedez maintenant", credit, "dollars")
+            print("Vous possedez maintenant {0} dollars".format(credit))
 
         elif (pariCouleur == rouletteCouleur):
             print("Bravo, vous avez gagne 0.5 fois votre mise, soit",
                   int(0.5 * miseJoueur), "dollars")
             credit += ceil(0.5 * miseJoueur)
-            print("Vous possedez maintenant", credit, "dollars")
+            print("Vous possedez maintenant {0} dollars".format(credit))
         else:
             debug(miseJoueur, credit)
-            print("vous avez perdu votre mise!", miseJoueur, "dollars")
+            print("vous avez perdu votre mise! {0} dollars".format(miseJoueur))
             credit -= int(miseJoueur)
-            print("Vous possedez maintenant", credit, "dollars")
+            print("Vous possedez maintenant {0} dollars".format(credit))
 
             if miseJoueur >= credit:
                 print(
