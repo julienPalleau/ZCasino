@@ -1,4 +1,5 @@
 from random import randrange
+from math import ceil
 credit = 100
 reponse = 'O'
 
@@ -58,7 +59,7 @@ while (reponse.upper() != "N" and reponse.upper() == "O" and miseJoueur < credit
         elif (pariCouleur == rouletteCouleur):
             print("Bravo, vous avez gagne 0.5 fois votre mise, soit",
                   int(0.5 * miseJoueur), "dollars")
-            credit += int(0.5 * miseJoueur)
+            credit += ceil(0.5 * miseJoueur)
             print("Vous possedez maintenant", credit, "dollars")
         else:
             debug(miseJoueur, credit)
