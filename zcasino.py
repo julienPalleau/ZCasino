@@ -58,7 +58,7 @@ while (reponse.upper() != "N" and reponse.upper() == "O" and miseJoueur < credit
 
         elif (pariCouleur == rouletteCouleur):
             print("Bravo, vous avez gagne 0.5 fois votre mise, soit",
-                  int(0.5 * miseJoueur), "dollars")
+                  ceil(0.5 * miseJoueur), "dollars")
             credit += ceil(0.5 * miseJoueur)
             print("Vous possedez maintenant {0} dollars".format(credit))
         else:
